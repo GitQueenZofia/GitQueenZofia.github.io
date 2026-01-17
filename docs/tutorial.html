@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <title>Tutorial - RuneSkate</title>
+</head>
+
+<body class="bg-background font-text">
+
+  <nav class="navigation">
+    <div class="section-div">
+      <div class="flex justify-between items-center h-24">
+        <div class="flex-shrink-0 z-10">
+          <a href="index.html" class="font-heading text-5xl font-black tracking-tighter text-black uppercase transform scale-y-110 italic -skew-x-12">
+            RuneSkate
+          </a>
+        </div>
+        <div class="hidden md:flex space-x-12 absolute left-1/2 transform -translate-x-1/2">
+          <a href="index.html" class="navigation-inactive">Home</a>
+          <a href="about.html" class="navigation-inactive">About</a>
+          <a href="team.html" class="navigation-inactive">Team</a>
+          <a href="gallery.html" class="navigation-inactive">Gallery</a>
+          <a href="tutorial.html" class="navigation-active">Tutorial</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="py-20 text-center bg-gray-900 text-white">
+    <h1 class="small-heading-white">Game Manual</h1>
+    <p class="text-gray-400 mt-4 text-lg">Master the controls. Learn the mechanics. Survive.</p>
+  </header>
+
+  <section class="section-white">
+    <div class="section-div">
+      
+      <h2 class="heading-black text-center">Input Map</h2>
+      
+      <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            
+            <thead>
+              <tr class="bg-gray-900 text-white">
+                <th class="p-5 uppercase tracking-wider text-sm font-bold border-b border-gray-700 w-1/3">Key Binding</th>
+                <th class="p-5 uppercase tracking-wider text-sm font-bold border-b border-gray-700 w-1/3">Action Name</th>
+                <th class="p-5 uppercase tracking-wider text-sm font-bold border-b border-gray-700 w-1/3 hidden sm:table-cell">Description</th>
+              </tr>
+            </thead>
+
+            <tbody class="text-gray-700">
+              
+              <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                <td class="p-5">
+                  <span class="inline-block border border-gray-300 rounded px-2 py-1 bg-gray-100 font-mono text-sm font-bold shadow-sm text-gray-800">W</span>
+                  <span class="inline-block border border-gray-300 rounded px-2 py-1 bg-gray-100 font-mono text-sm font-bold shadow-sm text-gray-800 ml-1">S</span>
+                  <span class="inline-block border border-gray-300 rounded px-2 py-1 bg-gray-100 font-mono text-sm font-bold shadow-sm text-gray-800 ml-1">A</span>
+                  <span class="inline-block border border-gray-300 rounded px-2 py-1 bg-gray-100 font-mono text-sm font-bold shadow-sm text-gray-800 ml-1">D</span>
+                </td>
+                <td class="p-5 font-bold">Movement</td>
+                <td class="p-5 text-sm text-gray-500 hidden sm:table-cell">Move Forward, Backward, Left, and Right.</td>
+              </tr>
+
+              <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                <td class="p-5">
+                  <span class="inline-block border border-gray-300 rounded px-3 py-1 bg-gray-100 font-mono text-sm font-bold shadow-sm text-gray-800">SPACE</span>
+                </td>
+                <td class="p-5 font-bold text-accent">Player Jump</td>
+                <td class="p-5 text-sm text-gray-500 hidden sm:table-cell">Perform an Ollie to clear obstacles.</td>
+              </tr>
+
+              <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                <td class="p-5">
+                  <span class="inline-block border border-gray-300 rounded px-3 py-1 bg-gray-100 font-mono text-sm font-bold shadow-sm text-gray-800">SHIFT</span>
+                </td>
+                <td class="p-5 font-bold">Player Run</td>
+                <td class="p-5 text-sm text-gray-500 hidden sm:table-cell">Sprint or Boost speed while skating.</td>
+              </tr>
+
+               <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                <td class="p-5">
+                  <span class="inline-block border border-gray-300 rounded px-3 py-1 bg-gray-100 font-mono text-sm font-bold shadow-sm text-gray-800">LMB</span>
+                  <span class="text-gray-400 mx-1">or</span>
+                  <span class="inline-block border border-gray-300 rounded px-2 py-1 bg-gray-100 font-mono text-sm font-bold shadow-sm text-gray-800">H</span>
+                </td>
+                <td class="p-5 font-bold text-purple-600">Player Hook</td>
+                <td class="p-5 text-sm text-gray-500 hidden sm:table-cell">Fire grappling hook to swing or grab objects.</td>
+              </tr>
+
+              <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                <td class="p-5">
+                  <span class="inline-block border border-gray-300 rounded px-2 py-1 bg-gray-100 font-mono text-sm font-bold shadow-sm text-gray-800">I</span>
+                </td>
+                <td class="p-5 font-bold">Inventory</td>
+                <td class="p-5 text-sm text-gray-500 hidden sm:table-cell">Open your backpack to view collected runes.</td>
+              </tr>
+
+              <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                <td class="p-5">
+                  <span class="inline-block border border-gray-300 rounded px-2 py-1 bg-gray-100 font-mono text-sm font-bold shadow-sm text-gray-800">E</span>
+                </td>
+                <td class="p-5 font-bold">Use Active Item</td>
+                <td class="p-5 text-sm text-gray-500 hidden sm:table-cell">Interact with the world or use a power-up.</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <footer class="footnote">
+    <p class="text-sm text-gray-500">&copy; 2026 RuneSkate. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

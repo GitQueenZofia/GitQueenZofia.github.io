@@ -89,4 +89,16 @@ html {
   .footnote {
     @apply bg-gray-900 text-white py-10 text-center border-t border-gray-800;
   }
+
+  .description-header {
+    @apply text-accent font-bold tracking-widest uppercase text-sm mb-6;
+  }
+
+  .description {
+    @apply text-gray-600 leading-relaxed;
+  }
+
+  .logo {
+    @apply font-heading text-5xl font-black text-black uppercase transform scale-y-110 italic -skew-x-12;
+  }
 }

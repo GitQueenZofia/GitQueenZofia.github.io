@@ -17,7 +17,7 @@ html {
 
 @font-face {
   font-family: "editundo";
-  src: url("/fonts/editundo.ttf") format("truetype");
+  src: url("./fonts/editundo.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }

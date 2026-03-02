@@ -13,7 +13,7 @@
     <div class="section-div">
       <div class="flex justify-between items-center h-24">
         <div class="flex-shrink-0 z-10">
-          <a href="index.html" class="font-heading text-5xl font-black text-black uppercase transform scale-y-110 italic -skew-x-12">
+          <a href="index.html" class="logo">
             RuneSkate
           </a>
         </div>
@@ -33,6 +33,29 @@
     <p class="text-gray-400 mt-4 text-lg">Meet the minds behind the grind</p>
   </header>
 
+  <div id="lightbox" class="fixed inset-0 hidden items-center justify-center z-50 backdrop-blur-md bg-black/70 transition-opacity duration-300 opacity-0">
+
+    <!-- Close button -->
+    <button id="closeBtn" class="absolute top-6 right-8 text-white text-4xl font-bold hover:scale-110 transition">
+      &times;
+    </button>
+
+    <!-- Previous -->
+    <button id="prevBtn" class="absolute left-6 text-white text-4xl hover:scale-125 transition">
+      &#10094;
+    </button>
+
+    <!-- Image -->
+    <img id="lightbox-img" 
+        class="max-w-[90%] max-h-[85%] rounded-xl shadow-2xl transform scale-90 opacity-0 transition-all duration-300">
+
+    <!-- Next -->
+    <button id="nextBtn" class="absolute right-6 text-white text-4xl hover:scale-125 transition">
+      &#10095;
+    </button>
+
+  </div>
+
   <section class="section-white">
     <div class="section-div text-center">
       
@@ -43,7 +66,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         
         <div class="group relative aspect-square overflow-hidden bg-gray-200">
-          <img src="img/1.jpg" alt="Gallery Image 1" class="image-img">
+          <img src="img/1.jpg" alt="Gallery Image 2" class="image-img">
         </div>
         <div class="group relative aspect-square overflow-hidden bg-gray-200">
           <img src="img/2.jpg" alt="Gallery Image 2" class="image-img">
@@ -82,7 +105,7 @@
         </div>
 
         <div class="group relative aspect-square overflow-hidden bg-gray-200">
-          <img src="img/5.jpg" alt="Gallery Image 13" class="image-img">
+          <img src="img/5.jpg" alt="Gallery Image 14" class="image-img">
         </div>
         <div class="group relative aspect-square overflow-hidden bg-gray-200">
           <img src="img/jb3.jpg" alt="Gallery Image 14" class="image-img">
@@ -115,6 +138,95 @@
   <footer class="footnote">
     <p class="text-sm text-gray-500">&copy; 2026 RuneSkate. All rights reserved.</p>
   </footer>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.getElementById("closeBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
+
+    const images = document.querySelectorAll(".image-img");
+    let currentIndex = 0;
+
+    function updateArrows() {
+      if (currentIndex === 0) {
+        prevBtn.style.display = "none";
+      } else {
+        prevBtn.style.display = "block";
+      }
+
+      if (currentIndex === images.length - 1) {
+        nextBtn.style.display = "none";
+      } else {
+        nextBtn.style.display = "block";
+      }
+    }
+
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImg.src = images[currentIndex].src;
+
+      updateArrows();
+
+      lightbox.classList.remove("hidden");
+      setTimeout(() => {
+        lightbox.classList.remove("opacity-0");
+        lightbox.classList.add("opacity-100");
+        lightbox.classList.add("flex");
+
+        lightboxImg.classList.remove("scale-90", "opacity-0");
+        lightboxImg.classList.add("scale-100", "opacity-100");
+      }, 10);
+
+      document.body.classList.add("overflow-hidden");
+    }
+
+    function closeLightbox() {
+      lightbox.classList.add("opacity-0");
+      lightboxImg.classList.add("scale-90", "opacity-0");
+      lightboxImg.classList.remove("scale-100", "opacity-100");
+
+      setTimeout(() => {
+        lightbox.classList.add("hidden");
+        lightbox.classList.remove("flex");
+      }, 300);
+
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+      updateArrows();
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+      updateArrows();
+    }
+
+    images.forEach((img, index) => {
+      img.addEventListener("click", () => openLightbox(index));
+    });
+
+    closeBtn.addEventListener("click", closeLightbox);
+    nextBtn.addEventListener("click", showNext);
+    prevBtn.addEventListener("click", showPrev);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") showNext();
+      if (e.key === "ArrowLeft") showPrev();
+    });
+  </script>
 
 </body>
 </html>

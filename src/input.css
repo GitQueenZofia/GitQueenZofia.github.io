@@ -15,6 +15,13 @@ html {
   --font-text: "Inter", sans-serif;
 }
 
+@font-face {
+  font-family: "editundo";
+  src: url("../docs/fonts/editundo.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
 @layer components {
   .navigation {
     @apply sticky top-0 z-50 bg-white/95 backdrop-blur-sm w-full border-b border-gray-100;
@@ -29,15 +36,43 @@ html {
   }
 
   .small-heading-white {
-    @apply font-heading text-6xl font-black uppercase italic;
+    font-family: "editundo", sans-serif;
+    font-weight: 900;
+    font-size: 3.75rem;
+    text-transform: uppercase;
+    font-style: italic;
+    color: white;
   }
 
   .heading-white {
-    @apply font-heading text-6xl md:text-9xl font-black text-white uppercase italic -skew-x-10 mb-6  drop-shadow-lg;
+    font-family: "editundo", sans-serif;
+    font-weight: 900;
+    font-size: 3.75rem;
+    text-transform: uppercase;
+    font-style: italic;
+    color: white;
+    transform: skewX(-10deg);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  }
+
+  .logo {
+    font-family: "editundo", sans-serif;
+    font-weight: 900;
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-style: italic;
+    transform: scaleY(1.1) skewX(-12deg);
+    color: black;
   }
 
   .heading-black {
-    @apply font-heading text-5xl font-bold uppercase mb-8 italic;
+    font-family: "editundo", sans-serif; 
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-style: italic;
+    margin-bottom: 2rem;
   }
 
   .section-white {
@@ -98,7 +133,7 @@ html {
     @apply text-gray-600 leading-relaxed;
   }
 
-  .logo {
-    @apply font-heading text-5xl font-black text-black uppercase transform scale-y-110 italic -skew-x-12;
+  .image-gallery {
+    @apply relative aspect-square overflow-hidden bg-gray-200
   }
 }
